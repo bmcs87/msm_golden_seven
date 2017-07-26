@@ -11,16 +11,16 @@ class ActorsController < ApplicationController
     @actor.image_url = params[:image_url]
 
     @actor.save
-    render("show")
+    render("/actors/details.html.erb")
   end
   
   def index
     @actor = Actor.all
   end
 
-  def show
+  def details
     @actor = Actor.find(params[:id])
-    render("/directors/show")
+    render("/actors/details.html.erb")
   end
 
   def update_form
@@ -37,7 +37,7 @@ class ActorsController < ApplicationController
 
     @actor.save
 
-    render("show")
+    render("/actors/edit_form.html.erb")
   end
 
   def destroy

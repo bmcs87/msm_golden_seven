@@ -12,7 +12,11 @@
   <dt>Bio</dt>
   <dd><%= @actor.bio %></dd>
 
-  <dt>Image</dt>
-  <dd><img src="<%= @actor.image_url %>" width="320"></dd>
+  <!-- <dt>Image</dt> -->
+  <!-- <dd> <= actor.image_url %></dd> -->
+
+  <p><a href="/actors/destroy" class="btn btn-primary">Delete actor</a></p>
+
+  <p><a href="/actors/edit_form" class="btn btn-primary">Edit actor</a></p>
 
 </dl>

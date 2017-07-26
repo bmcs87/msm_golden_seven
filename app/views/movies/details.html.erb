@@ -15,11 +15,14 @@
   <dt>Description</dt>
   <dd><%= @movie.description %></dd>
 
-  <dt>Director ID</dt>
-  <dd><%= @movie.director_id %></dd>
+  <!--  <dt>Director ID</dt> -->
+  <!--  <dd movie.director_id %></dd> -->
 
   <dt>Image</dt>
-  <dd><td><%= @movie.image_url %></td></dd>
+  <dd><%= @movie.image_url %></dd>
+  
+  <p><a href="/movies/destroy" class="btn btn-primary">Delete movie</a></p>
 
+  <p><a href="/movies/edit_form" class="btn btn-primary">Edit movie</a></p>
 
 </dl>

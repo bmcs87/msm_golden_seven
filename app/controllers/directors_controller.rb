@@ -11,16 +11,16 @@ class DirectorsController < ApplicationController
     @director.image_url = params[:image_url]
 
     @director.save
-    render("show")
+    render("directors/details.html.erb")
   end
   
   def index
     @directors = Director.all
   end
 
-  def show
+  def details
     @director = Director.find(params[:id])
-    render("/directors/show")
+    render("/directors/details.html.erb")
   end
 
   def update_form
@@ -37,7 +37,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    render("show")
+    render("/directors/details.html.erb")
   end
 
   def destroy

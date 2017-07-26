@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   # READ
   get("/directors", :controller =>'directors', :action => 'index')
-  get("/directors/:id", :controller =>'directors', :action => 'show')
+  get("/directors/:id", :controller =>'directors', :action => 'details')
 
   # UPDATE
   get("/directors/:id/edit_form", :controller => 'directors', :action => 'update_form')
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
  
   # READ
   get("/movies", :controller =>'movies', :action => 'index')
-  get("/movies/:id", :controller =>'movies', :action => 'show')
+  get("/movies/:id", :controller =>'movies', :action => 'details')
   
   #UPDATE
   get("/movies/:id/edit_form", :controller => 'movies', :action => 'update_form')
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   
   #READ
   get("/actors", :controller =>'actors', :action => 'index')
-  get("/actors/:id", :controller =>'actors', :action => 'show')
+  get("/actors/:id", :controller =>'actors', :action => 'details')
 
   #UPDATE
   get("/actors/:id/edit_form", :controller => 'actors', :action => 'update_form')

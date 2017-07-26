@@ -13,16 +13,16 @@ class MoviesController < ApplicationController
 
     @movie.save
 
-    render("show")
+    render("/movies/details.html.erb")
   end
  
   def index
     @movies = Movie.all
   end
 
-  def show
+  def details
     @movie = Movie.find(params[:id])
-    render("/movies/show")
+    render("/movies/details.html.erb")
   end
 
   def update_form
@@ -39,7 +39,7 @@ class MoviesController < ApplicationController
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
 
-    render("show")
+    render("/movies/details.html.erb")
   end
 
   def destroy
