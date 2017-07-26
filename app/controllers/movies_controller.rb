@@ -1,12 +1,5 @@
 class MoviesController < ApplicationController
-  def index
-    @movies = Movie.all
-  end
-
-  def show
-    @movie = Movie.find(params[:id])
-  end
-
+ 
   def new_form
   end
 
@@ -22,8 +15,17 @@ class MoviesController < ApplicationController
 
     render("show")
   end
+ 
+  def index
+    @movies = Movie.all
+  end
 
-  def edit_form
+  def show
+    @movie = Movie.find(params[:id])
+    render("/movies/show")
+  end
+
+  def update_form
     @movie = Movie.find(params[:id])
   end
 

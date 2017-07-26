@@ -11,19 +11,19 @@ class ActorsController < ApplicationController
     @actor.image_url = params[:image_url]
 
     @actor.save
-
     render("show")
   end
   
   def index
-    @actors = Actor.all
+    @actor = Actor.all
   end
 
   def show
     @actor = Actor.find(params[:id])
+    render("/directors/show")
   end
 
-  def edit_form
+  def update_form
     @actor = Actor.find(params[:id])
   end
 
