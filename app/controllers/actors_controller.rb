@@ -23,7 +23,7 @@ class ActorsController < ApplicationController
     render("/actors/details.html.erb")
   end
 
-  def update_form
+  def edit_form
     @actor = Actor.find(params[:id])
   end
 

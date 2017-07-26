@@ -23,7 +23,7 @@ class DirectorsController < ApplicationController
     render("/directors/details.html.erb")
   end
 
-  def update_form
+  def edit_form
     @director = Director.find(params[:id])
   end
 
