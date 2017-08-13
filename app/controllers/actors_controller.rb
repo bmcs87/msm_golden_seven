@@ -12,6 +12,8 @@ class ActorsController < ApplicationController
   
   def new
     @actor = Actor.new
+    
+    @actor.save
     render("actors/new.html.erb")
   end
   

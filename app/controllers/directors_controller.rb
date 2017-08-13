@@ -2,7 +2,7 @@ class DirectorsController < ApplicationController
 
   def index
     @directors = Director.all
-    render("actors/index.html.erb")
+    render("directors/index.html.erb")
   end
 
   def details
@@ -46,7 +46,7 @@ class DirectorsController < ApplicationController
 
   def destroy
     @director = Director.find(params[:id])
-
-    @director.destroy
+    @director.destroy 
+    render("directors/destroy.html.erb")
   end
 end
