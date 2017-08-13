@@ -2,7 +2,7 @@
   <h1>Actors</h1>
 </div>
 
-<p><a href="/actors/new_form" class="btn btn-primary">Add a new actor</a></p>
+<p><a href="/actors/new" class="btn btn-primary">Add a new actor</a></p>
 
 <table class="table table-hover">
   <thead>
@@ -11,16 +11,13 @@
       <th>Dob</th>
       <th>Name</th>
       <th>Bio</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @actor.each do |actor| %>
+    <% @actors.each do |actor| %>
       <tr>
-        <td><img src="<%= actor.image_url %>"></td>
+        <td><%= actor.image_url %></td>
         <td><%= actor.dob %></td>
         <td><%= actor.name %></td>
         <td><%= truncate(actor.bio) %></td>
@@ -30,7 +27,7 @@
           </a>
         </td>
         <td>
-          <a href="/actors/<%= actor.id %>/edit_form" class="btn btn-warning">
+          <a href="/actors/<%= actor.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
         </td>
@@ -43,4 +40,3 @@
     <% end %>
   </tbody>
 </table>
-
