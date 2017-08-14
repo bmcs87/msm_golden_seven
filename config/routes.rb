@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   
   #READ
   get("/actors", :controller =>'actors', :action => 'index')
-  get("/actors/:id", :controller =>'actors', :action => 'details')
+  get("/actors/:id", :controller =>'actors', :action => 'show')
 
   #UPDATE
   get("/actors/:id/edit", :controller => 'actors', :action => 'edit')

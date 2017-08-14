@@ -5,15 +5,14 @@ class ActorsController < ApplicationController
     render("actors/index.html.erb")
   end
   
-  def details
+  def show
     @actor = Actor.find(params[:id])
-    render("actors/details.html.erb")
+    render("actors/show.html.erb")
   end
   
   def new
     @actor = Actor.new
     
-    @actor.save
     render("actors/new.html.erb")
   end
   
@@ -26,7 +25,7 @@ class ActorsController < ApplicationController
     @actor.image_url = params[:image_url]
 
     @actor.save
-    render("actors/details.html.erb")
+    redirect_to actors_url
   end
   
   def edit
@@ -45,13 +44,13 @@ class ActorsController < ApplicationController
 
     @actor.save
     
-    render("actors/edit.html.erb")
+    redirect_to :controller =>'actors', :action => 'show', :id => @actor.id
   end
   
   def destroy
     @actor = Actor.find(params[:id])
     @actor.destroy 
-    render("actors/destroy.html.erb")
+    redirect_to actors_url
   end
   
 end
