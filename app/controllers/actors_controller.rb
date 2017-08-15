@@ -52,5 +52,4 @@ class ActorsController < ApplicationController
     @actor.destroy 
     redirect_to actors_url
   end
-  
 end

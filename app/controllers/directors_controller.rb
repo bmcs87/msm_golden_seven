@@ -5,17 +5,19 @@ class DirectorsController < ApplicationController
     render("directors/index.html.erb")
   end
 
-  def details
+  def show
     @director = Director.find(params[:id])
-    render("/directors/details.html.erb")
+    render("directors/show.html.erb")
   end
 
   def new
     @director = Director.new
-    render("directors/new/html.erb")
+    
+    render("directors/new.html.erb")
   end
 
   def create
+    
     @director = Director.new
     @director.dob = params[:dob]
     @director.name = params[:name]
@@ -23,11 +25,12 @@ class DirectorsController < ApplicationController
     @director.image_url = params[:image_url]
 
     @director.save
-    render("directors/details.html.erb")
+    redirect_to directors_url
   end
   
   def edit
     @director = Director.find(params[:id])
+    
     render("directors/edit.html.erb")
   end
 
@@ -41,12 +44,12 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    render("/directors/edit.html.erb")
+    redirect_to :controller =>'directors', :action => 'show', :id => @director.id
   end
 
   def destroy
     @director = Director.find(params[:id])
     @director.destroy 
-    render("directors/destroy.html.erb")
+    redirect_to directors_url
   end
 end

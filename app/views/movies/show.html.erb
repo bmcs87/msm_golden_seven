@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Movie #<%= @movie.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd><%= @movie.title %></dd>
+
+      <dt>Year</dt>
+      <dd><%= @movie.year %></dd>
+
+      <dt>Duration</dt>
+      <dd><%= @movie.duration %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @movie.description %></dd>
+
+      <!--  <dt>Director ID</dt> -->
+      <!--  <dd movie.director_id %></dd> -->
+
+      <dt>Image</dt>
+      <dd><%= @movie.image_url %></dd>
+     </dl>
+  </div>  
+</div>     
+      
+  <p><a href="/delete_movie/<%= @movie.id %>" class="btn btn-primary">Delete movie</a></p>
+
+  <p><a href="/movies/<%= @movie.id %>/edit" class="btn btn-primary">Edit movie</a></p>
+
+</dl>
